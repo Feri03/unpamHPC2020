@@ -2,15 +2,49 @@ import {StyleSheet} from 'react-native';
 
 const Styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: 300,
-    justifyContent: 'center',
-    alignItems: 'center',
+    flex: 1,
     backgroundColor: 'rgb(234, 234, 235)',
   },
-  text: {
-    fontSize: 18,
-    color: '#0b0c0f',
+  bannerImage: {
+    width: '100%',
+    height: 200,
+    resizeMode: 'stretch',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+  },
+  card: {
+    width: 200,
+    height: 180,
+    borderRadius: 6,
+    backgroundColor: 'white',
+    elevation: 2,
+    overflow: 'hidden',
+    marginHorizontal: 12,
+    marginVertical: 13,
+  },
+  bannerCard: {
+    width: '100%',
+    height: '50%',
+    resizeMode: 'stretch',
+  },
+  contentCard: {
+    flex: 1,
+    paddingHorizontal: 12,
+    paddingVertical: 12,
+  },
+  titleTextCard: {
+    fontSize: 12,
+  },
+  descTextCard: {
+    fontSize: 11,
+  },
+  flatlistHorizontal: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    height: 700,
   },
 });
 

@@ -8,7 +8,9 @@ const DetailPage = ({route}) => {
   const {data} = route.params;
   return (
     <View style={Styles.container}>
-      <Text style={Styles.text}>{'Ini screen Stack kedua,\n Pesan: ' + data}</Text>
+      <Text style={Styles.text}>
+        {'Ini screen Stack kedua,\n Pesan: ' + data}
+      </Text>
     </View>
   );
 };
