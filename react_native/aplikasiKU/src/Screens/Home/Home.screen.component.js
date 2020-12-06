@@ -1,11 +1,19 @@
 // @flow
 
 import React from 'react';
-import {Text, View, Image, FlatList, ScrollView} from 'react-native';
+import {
+  Text,
+  View,
+  Image,
+  FlatList,
+  Button,
+  TouchableOpacity,
+} from 'react-native';
 import {Styles} from './Home.screen.style';
 import {Images} from '../../Themes/Images';
 import {keyExtractor} from '../../Utils/Helpers.utils';
 import {Card} from '../../Components';
+import {Colors} from '../../Themes/Colors';
 
 const HomePage = ({navigation}) => {
   // cara 1 = linking image
@@ -48,6 +56,10 @@ const HomePage = ({navigation}) => {
     },
   ];
 
+  const onButtonPress = () => {
+    alert('WARN', 'SUCCESS!!!');
+  };
+
   return (
     <View style={Styles.container}>
       <Image source={imageAsset} style={Styles.bannerImage} />
@@ -58,9 +70,20 @@ const HomePage = ({navigation}) => {
         style={Styles.flatlistHorizontal}
         keyExtractor={keyExtractor}
       />
-      <ScrollView>
-        {dataCard.map((item, index) => renderCardItem({item}))}
-      </ScrollView>
+      <View style={Styles.buttonContainer}>
+        <Text style={Styles.textNormal}>Klik tombol disamping</Text>
+        <Button
+          onPress={onButtonPress}
+          color={Colors.FOREST_GREEN}
+          title="Tekan Disini"
+          style={Styles.buttonDefault}
+        />
+        <TouchableOpacity onPress={onButtonPress}>
+          <Card style={Styles.cardButton}>
+            <Text style={Styles.textButton}>Tekan</Text>
+          </Card>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

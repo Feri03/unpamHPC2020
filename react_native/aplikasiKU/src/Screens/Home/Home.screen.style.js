@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import {Colors} from '../../Themes/Colors';
 
 const Styles = StyleSheet.create({
   container: {
@@ -35,6 +36,31 @@ const Styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingVertical: 12,
     height: 700,
+  },
+  buttonContainer: {
+    height: 35,
+    width: '100%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 200,
+    marginHorizontal: 12,
+  },
+  textNormal: {
+    paddingHorizontal: 10,
+  },
+  cardButton: {
+    height: 30,
+    width: 60,
+    backgroundColor: Colors.FOREST_GREEN,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textButton: {
+    color: Colors.WHITE,
+  },
+  buttonDefault: {
+    borderRadius: 70,
+    overflow: 'hidden',
   },
 });
 
