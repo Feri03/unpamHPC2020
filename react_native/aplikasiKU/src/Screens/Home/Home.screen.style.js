@@ -15,16 +15,6 @@ const Styles = StyleSheet.create({
     justifyContent: 'center',
     paddingHorizontal: 10,
   },
-  card: {
-    width: 200,
-    height: 180,
-    borderRadius: 6,
-    backgroundColor: 'white',
-    elevation: 2,
-    overflow: 'hidden',
-    marginHorizontal: 12,
-    marginVertical: 13,
-  },
   bannerCard: {
     width: '100%',
     height: '50%',

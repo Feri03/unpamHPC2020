@@ -5,6 +5,8 @@ import {Text, View, Image, FlatList} from 'react-native';
 import {Styles} from './Home.screen.style';
 import {Routes} from '../../Routes';
 import {Images} from '../../Themes/Images';
+import {keyExtractor} from '../../Utils/Helpers.utils';
+import {Card} from '../../Components';
 
 const HomePage = ({navigation}) => {
   // cara 1 = linking image
@@ -16,28 +18,31 @@ const HomePage = ({navigation}) => {
   const imageAsset = Images.banner;
 
   const renderCardItem = ({item}) => (
-    <View style={Styles.card}>
+    <Card>
       <Image source={{uri: item?.image_url}} style={Styles.bannerCard} />
       <View style={Styles.contentCard}>
         <Text style={Styles.titleTextCard}>{item?.title}</Text>
         <Text style={Styles.descTextCard}>{item?.desc}</Text>
       </View>
-    </View>
+    </Card>
   );
 
   const dataCard = [
     {
+      id: 1,
       title: 'kartu satu',
       desc: 'Lorem ipsum dolor 1',
       image_url: 'https://i.ytimg.com/vi/5R2DOFSQVtg/maxresdefault.jpg',
     },
     {
+      id: 2,
       title: 'kartu dua',
       desc: 'Lorem ipsum dolor 2',
       image_url:
         'https://s3-us-west-1.amazonaws.com/psl-images/wp-content/uploads/2018/01/09202950/night-sky-stars4.jpg',
     },
     {
+      id: 3,
       title: 'kartu tiga',
       desc: 'Lorem ipsum dolor 3',
       image_url: 'https://i.ytimg.com/vi/5R2DOFSQVtg/maxresdefault.jpg',
@@ -52,11 +57,13 @@ const HomePage = ({navigation}) => {
         renderItem={renderCardItem}
         horizontal
         style={Styles.flatlistHorizontal}
+        keyExtractor={keyExtractor}
       />
       <FlatList
         data={dataCard}
         renderItem={renderCardItem}
         style={Styles.flatlist}
+        keyExtractor={keyExtractor}
       />
     </View>
   );
