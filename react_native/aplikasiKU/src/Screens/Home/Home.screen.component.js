@@ -1,9 +1,8 @@
 // @flow
 
 import React from 'react';
-import {Text, View, Image, FlatList} from 'react-native';
+import {Text, View, Image, FlatList, ScrollView} from 'react-native';
 import {Styles} from './Home.screen.style';
-import {Routes} from '../../Routes';
 import {Images} from '../../Themes/Images';
 import {keyExtractor} from '../../Utils/Helpers.utils';
 import {Card} from '../../Components';
@@ -59,12 +58,9 @@ const HomePage = ({navigation}) => {
         style={Styles.flatlistHorizontal}
         keyExtractor={keyExtractor}
       />
-      <FlatList
-        data={dataCard}
-        renderItem={renderCardItem}
-        style={Styles.flatlist}
-        keyExtractor={keyExtractor}
-      />
+      <ScrollView>
+        {dataCard.map((item, index) => renderCardItem({item}))}
+      </ScrollView>
     </View>
   );
 };
