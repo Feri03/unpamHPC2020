@@ -49,8 +49,8 @@ const Styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   cardButton: {
-    height: 30,
-    width: 60,
+    height: 40,
+    width: 75,
     backgroundColor: Colors.FOREST_GREEN,
     justifyContent: 'center',
     alignItems: 'center',

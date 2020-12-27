@@ -15,7 +15,9 @@ import {keyExtractor} from '../../Utils/Helpers.utils';
 import {Card} from '../../Components';
 import {Colors} from '../../Themes/Colors';
 
-const HomePage = ({navigation}) => {
+const HomePage = (props) => {
+  const {increment, decrement, resetCount, count} = props;
+
   // cara 1 = linking image
   const linkingImage = {
     uri: 'https://i.ytimg.com/vi/5R2DOFSQVtg/maxresdefault.jpg',
@@ -70,17 +72,22 @@ const HomePage = ({navigation}) => {
         style={Styles.flatlistHorizontal}
         keyExtractor={keyExtractor}
       />
+      <Text>Count = {count}</Text>
       <View style={Styles.buttonContainer}>
-        <Text style={Styles.textNormal}>Klik tombol disamping</Text>
-        <Button
-          onPress={onButtonPress}
-          color={Colors.FOREST_GREEN}
-          title="Tekan Disini"
-          style={Styles.buttonDefault}
-        />
-        <TouchableOpacity onPress={onButtonPress}>
+        <Text style={Styles.textNormal}>Klik:</Text>
+        <TouchableOpacity onPress={increment}>
           <Card style={Styles.cardButton}>
-            <Text style={Styles.textButton}>Tekan</Text>
+            <Text style={Styles.textButton}>TAMBAH</Text>
+          </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={decrement}>
+          <Card style={Styles.cardButton}>
+            <Text style={Styles.textButton}>KURANG</Text>
+          </Card>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={resetCount}>
+          <Card style={Styles.cardButton}>
+            <Text style={Styles.textButton}>RESET</Text>
           </Card>
         </TouchableOpacity>
       </View>
